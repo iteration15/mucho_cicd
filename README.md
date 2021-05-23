@@ -4,4 +4,4 @@
 2. Update the "key_name" var in variables.tf.
 3. 'terraform plan'
 4. 'terraform apply'
-5. ssh: 'ssh -i "mucho_cicd.pem" ubuntu@<ec2-name>'
+5. 'ssh -i "mucho_cicd.pem" ubuntu@[ec2-name]'
