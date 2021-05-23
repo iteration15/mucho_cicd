@@ -14,8 +14,8 @@ variable "ec2_name" {
 }
 
 variable "ec2_ami" {
-    description = "AMI for Ubuntu 20.04"
-    default     = "ami-09e67e426f25ce0d7"
+    description = "AMI for Amazon Linux 2"
+    default     = "ami-0d5eff06f840b45e9"
 }
 
 variable "ec2_count" {
