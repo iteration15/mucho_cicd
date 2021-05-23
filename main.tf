@@ -26,3 +26,7 @@ resource "aws_security_group" "web-sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
+
+resource "docker_image" "nginx" {
+  name = "nginx:1.11-alpine"
+}
