@@ -30,5 +30,5 @@ variable "ec2_type" {
 
 variable "key_name" {
     description = "key name"
-    default     = ""
+    default     = "mucho_cicd"
 }
