@@ -1,3 +1,3 @@
 provider "aws" {
-   region = "us-west-2"
+   region = "${var.ec2_region}"
 }
