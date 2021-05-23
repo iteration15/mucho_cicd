@@ -27,6 +27,12 @@ resource "aws_security_group" "web-sg" {
   }
 }
 
-resource "docker_image" "nginx" {
-  name = "nginx:1.11-alpine"
+#create a repo to store containers
+resource "aws_ecr_repository" "web-ecr" {
+  name = "${random_pet.name.id}-sg"
+  image_tag_mutability = "MUTABLE"
+
+  tags = {
+    project = random_pet.name.id
+  }
 }
