@@ -20,16 +20,16 @@ resource "aws_instance" "web" {
     chmod +x /usr/local/bin/docker-compose
   EOF
 
-  #connection {
-  #  type = "ssh"
-  #  user = "ec2-user"
-  #  private_key = "${file("~/.ssh/mucho_cicd.pem")}"
-  #  host = "${self.public_ip}"
-  #}
+  connection {
+    type = "ssh"
+    user = "ec2-user"
+    private_key = "${file("~/.ssh/mucho_cicd.pem")}"
+    host = "${self.public_ip}"
+  }
 
-  #provisioner "local-exec" {
-  #  command = "ansible-playbook -u ec2-user -i '${self.public_ip},' --private-key '${file("~/.ssh/mucho_cicd.pem")}' provision.yml"
-  #}
+  provisioner "local-exec" {
+    command = "ansible-playbook -u ec2-user -i '${self.public_ip},' --private-key '${file("~/.ssh/mucho_cicd.pem")}' provision.yml"
+  }
 }
 
 resource "aws_security_group" "web-sg" {
