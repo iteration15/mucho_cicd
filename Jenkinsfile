@@ -14,10 +14,11 @@ pipeline {
     }
     stage('Install Ansible') {
       steps {
+        #need this: python3 -m pip install --user virtualenv
         sh "virtualenv --system-site-packages -p python3 ${WORKSPACE}/tools"
 	withPythonEnv("${WORKSPACE}/tools/") {
-	  sh "pip install --upgrade pip"
-	  sh "pip install -r requirements.txt"
+	  sh "python3 -m pip install --upgrade pip"
+	  sh "python3 -m pip install -r requirements.txt"
 	}
       }	
     }
