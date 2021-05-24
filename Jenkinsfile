@@ -14,7 +14,7 @@ pipeline {
     }
     stage('Install Ansible') {
       steps {
-        sh "amazon-linux-extras install ansible2 -y"
+        sh "sudo amazon-linux-extras install ansible2 -y"
       }	
     }
   }
