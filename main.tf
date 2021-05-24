@@ -6,7 +6,7 @@ resource "aws_instance" "web" {
    vpc_security_group_ids = [aws_security_group.web-sg.id]
    key_name = var.key_name
    tags = {
-    Name = random_pet.name.id
+    Name = var.ec2_name
   }
 
   user_data = <<-EOF
@@ -19,7 +19,6 @@ resource "aws_instance" "web" {
     sudo curl -L https://github.com/docker/compose/releases/download/1.25.4/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
     sudo chmod +x /usr/local/bin/docker-compose
   EOF
-
 }
 
 resource "aws_security_group" "web-sg" {

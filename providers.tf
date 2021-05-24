@@ -12,5 +12,5 @@ provider "aws" {
 }
 
 provider "docker" {
-  host = "npipe:////.//pipe//docker_engine"
+  host = "tcp://docker:2345/"
 }

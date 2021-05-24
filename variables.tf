@@ -10,7 +10,7 @@ variable "ec2_resource_group" {
 
 variable "ec2_name" {
     description = "name of ec2"
-    default     = "mucho_cicd"
+    default     = "ansible"
 }
 
 variable "ec2_ami" {
