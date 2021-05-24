@@ -3,3 +3,4 @@ ansible==2.7.12
 requests-credssp==1.1.0
 pywinrm==0.3.0
 setuptools!=50.0
+importlib-resources=5.1.4
