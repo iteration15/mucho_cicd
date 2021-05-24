@@ -10,7 +10,7 @@ variable "ec2_resource_group" {
 
 variable "ec2_name" {
     description = "name of ec2"
-    default     = "ansible"
+    default     = "mucho_cicd"
 }
 
 variable "ec2_ami" {
@@ -25,7 +25,7 @@ variable "ec2_count" {
 
 variable "ec2_type" {
     description = "size of the ec2"
-    default     = "t2.micro"
+    default     = "t2.xlarge"
 }
 
 variable "key_name" {

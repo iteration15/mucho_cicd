@@ -12,13 +12,27 @@ resource "aws_instance" "web" {
   user_data = <<-EOF
     #!/bin/bash
     set -ex
-    sudo yum update -y
-    sudo amazon-linux-extras install docker -y
-    sudo service docker start
-    sudo usermod -a -G docker ec2-user
-    sudo curl -L https://github.com/docker/compose/releases/download/1.25.4/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
-    sudo chmod +x /usr/local/bin/docker-compose
+    yum update -y
+    amazon-linux-extras install docker -y
+    service docker start
+    usermod -a -G docker ec2-user
+    curl -L https://github.com/docker/compose/releases/download/1.25.4/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+    chmod +x /usr/local/bin/docker-compose
   EOF
+
+  connection {
+      type        = "ssh"
+      user        = "ec2-user"
+      private_key = "${file("~/.ssh/mucho_cicd.pem")}"
+      host        = "${self.public_ip}"
+    }
+
+  provisioner "remote-exec" {
+    inline = [
+      "sudo amazon-linux-extras install ansible2 -y",
+      "sudo yum install git -y"
+    ]
+  }
 }
 
 resource "aws_security_group" "web-sg" {
