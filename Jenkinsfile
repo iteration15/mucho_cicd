@@ -14,11 +14,7 @@ pipeline {
     }
     stage('Install Ansible') {
       steps {
-        sh "virtualenv --system-site-packages -p python3 ${WORKSPACE}/tools"
-        withPythonEnv("${WORKSPACE}/tools/") {
-	  sh "pip install --upgrade pip"
-	  sh "pip install -r requirements.txt"
-	}
+        sh "amazon-linux-extras install ansible2 -y"
       }	
     }
   }
