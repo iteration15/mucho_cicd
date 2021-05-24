@@ -14,7 +14,7 @@ pipeline {
     }
     stage('Install Ansible') {
       steps {
-        sh "sudo amazon-linux-extras install ansible2 -y"
+        sh "virtualenv --system-site-packages -p python3 ${WORKSPACE}/tools"
       }	
     }
   }
