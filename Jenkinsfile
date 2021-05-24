@@ -3,9 +3,6 @@ def getenv(String envname) {
   return result[envname]
 }
 pipeline {
-  agent {
-    label "master"
-  }
   stages {
     stage('Clean Workspace') {
       steps {
