@@ -5,5 +5,3 @@
 3. 'terraform plan'
 4. 'terraform apply'
 5. 'ssh -i "~/.ssh/mucho_cicd.pem" ubuntu@[ec2-name]'
-6. Create another ec2 called 'ansible'
-7. ssh into ansible ec2.
