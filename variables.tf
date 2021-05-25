@@ -25,7 +25,7 @@ variable "ec2_count" {
 
 variable "ec2_type" {
     description = "size of the ec2"
-    default     = "t2.xlarge"
+    default     = "t2.micro"
 }
 
 variable "key_name" {
