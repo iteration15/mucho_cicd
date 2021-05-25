@@ -19,5 +19,9 @@ pipeline {
         sh "unzip -o -d ${WORKSPACE}/tools/bin/ ${WORKSPACE}/terraform.zip"
       }	
     }
+    stage('Terraform Init') {
+      steps {
+        sh "${WORKSPACE}/tools/bin/terraform init -no-color"
+    }
   }
 }
