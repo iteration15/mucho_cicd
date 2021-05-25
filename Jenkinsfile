@@ -22,6 +22,7 @@ pipeline {
     stage('Terraform Init') {
       steps {
         sh "${WORKSPACE}/tools/bin/terraform init -no-color"
+      }
     }
   }
 }
